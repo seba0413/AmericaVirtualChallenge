@@ -9,14 +9,14 @@
             Da de alta una nueva compra
             </summary>
             <param name="compra"></param>
-            <returns></returns>
+            <returns></returns>     
         </member>
         <member name="M:AmericaVirtualChallenge.Controllers.ComprasController.GetCompras(System.Int32)">
             <summary>
             Obtiene el listado de las compras totales o de un usuario
             </summary>
             <param name="id"></param>
-            <returns></returns>
+            <returns></returns>    
         </member>
         <member name="M:AmericaVirtualChallenge.Controllers.ProductosController.GetProducto(System.Int32)">
             <summary>
@@ -30,6 +30,13 @@
             Obtiene todos los productos de forma paginada
             </summary>
             <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmericaVirtualChallenge.Controllers.ProductosController.AltaProducto(AmericaVirtualChallenge.Models.Productos)">
+            <summary>
+            Alta de producto
+            </summary>
+            <param name="producto"></param>
             <returns></returns>
         </member>
         <member name="M:AmericaVirtualChallenge.Controllers.UsuarioController.Registro(AmericaVirtualChallenge.Models.Usuarios)">

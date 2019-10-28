@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using AmericaVirtualChallenge.Controllers.ResponseModels;
 using AmericaVirtualChallenge.Models;
 
@@ -73,12 +74,45 @@ namespace AmericaVirtualChallenge.Data
             return listadoProductos;
         }
 
+        public ProductoResponse AltaProducto(Productos producto)
+        {
+            ProductoResponse pRes = new ProductoResponse();
+
+            byte[] byteImg = Encoding.UTF8.GetBytes(producto.Imagen);
+            producto.Imagen = Convert.ToBase64String(byteImg);
+
+            try
+            {
+                using (ServiciosContext context = new ServiciosContext())
+                {
+                    context.Productos.Add(producto);
+                    context.SaveChanges();
+                    Mapper(pRes, producto, "Producto dado de alta");
+                }
+            }
+            catch (Exception ex)
+            {
+                pRes.Mensaje = ex.Message;
+            }
+
+            return pRes;
+        }
+
         private void Mapper(ProductoResponse pRes, Productos producto)
         {
             pRes.Id = producto.Id;
             pRes.Descripcion = producto.Descripcion;
             pRes.Precio = producto.Precio;
             pRes.Imagen = producto.Imagen;
+        }
+
+        private void Mapper(ProductoResponse pRes, Productos producto, string mensaje)
+        {
+            pRes.Id = producto.Id;
+            pRes.Descripcion = producto.Descripcion;
+            pRes.Precio = producto.Precio;
+            pRes.Imagen = producto.Imagen;
+            pRes.Mensaje = mensaje; 
         }
     }
 }

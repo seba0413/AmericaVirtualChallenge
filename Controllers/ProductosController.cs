@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using AmericaVirtualChallenge.Services;
 using AmericaVirtualChallenge.Controllers.ResponseModels;
-using System.Text.Encodings.Web;
+using AmericaVirtualChallenge.Models;
 
 namespace AmericaVirtualChallenge.Controllers
 {
@@ -41,6 +41,18 @@ namespace AmericaVirtualChallenge.Controllers
                                                 .ToList();
 
             return productosPaginados;
+        }
+
+        /// <summary>
+        /// Alta de producto
+        /// </summary>
+        /// <param name="producto"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("Productos/AltaProducto/")]
+        public ProductoResponse AltaProducto([FromBody] Productos producto)
+        {
+            return new ProductosService().AltaProducto(producto);
         }
     }
 }
