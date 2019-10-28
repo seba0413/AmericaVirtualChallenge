@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AmericaVirtualChallenge</name>
+    </assembly>
+    <members>
+        <member name="M:AmericaVirtualChallenge.Controllers.ComprasController.AltaCompra(AmericaVirtualChallenge.Models.Compras)">
+            <summary>
+            Da de alta una nueva compra
+            </summary>
+            <param name="compra"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmericaVirtualChallenge.Controllers.ComprasController.GetCompras(System.Int32)">
+            <summary>
+            Obtiene el listado de las compras totales o de un usuario
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmericaVirtualChallenge.Controllers.ProductosController.GetProducto(System.Int32)">
+            <summary>
+            Obtiene un producto
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmericaVirtualChallenge.Controllers.ProductosController.GetProductos(System.Nullable{System.Int32})">
+            <summary>
+            Obtiene todos los productos de forma paginada
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmericaVirtualChallenge.Controllers.UsuarioController.Registro(AmericaVirtualChallenge.Models.Usuarios)">
+            <summary>
+            Registro de usuario
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmericaVirtualChallenge.Controllers.UsuarioController.Login(AmericaVirtualChallenge.Models.Usuarios)">
+            <summary>
+            Login de usuario
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AmericaVirtualChallenge.Controllers.UsuarioController.Logout(AmericaVirtualChallenge.Models.Usuarios)">
+            <summary>
+            Logout de usuario
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

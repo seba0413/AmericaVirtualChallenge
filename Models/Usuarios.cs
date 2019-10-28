@@ -7,7 +7,6 @@ namespace AmericaVirtualChallenge.Models
     {
         public Usuarios()
         {
-            Compras = new HashSet<Compras>();
         }
 
         public int Id { get; set; }
@@ -17,6 +16,5 @@ namespace AmericaVirtualChallenge.Models
         public string Clave { get; set; }
         public bool? Logueado { get; set; }
 
-        public virtual ICollection<Compras> Compras { get; set; }
     }
 }

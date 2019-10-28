@@ -10,16 +10,27 @@ namespace AmericaVirtualChallenge.Controllers
 {
     public class ProductosController : Controller
     {
-        // 
-        // GET: /Productos/GetProducto/{id}
+        /// <summary>
+        /// Obtiene un producto
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("Productos/GetProducto/{id}")]
         public ProductoResponse GetProducto(int id)
         {
             return new ProductosService().GetProducto(id);
         }
 
-        // 
-        // GET: /Productos/GetProductos?page={page}
-        public List<ProductoResponse> GetProductos(int? page)
+        /// <summary>
+        /// Obtiene todos los productos de forma paginada
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("Productos/GetProductos/")]
+
+        public List<ProductoResponse> GetProductos([FromQuery]int? page)
         {
             const int pageSize = 2;
 

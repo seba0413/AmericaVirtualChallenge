@@ -8,16 +8,25 @@ namespace AmericaVirtualChallenge.Controllers
 {
     public class ComprasController : Controller
     {
-        // 
-        // POST: /Compras/AltaCompra/
+        /// <summary>
+        /// Da de alta una nueva compra
+        /// </summary>
+        /// <param name="compra"></param>
+        /// <returns></returns>     
         [HttpPost]
+        [Route("Compras/AltaCompra/")]
         public CompraResponse AltaCompra([FromBody] Compras compra)
         {
             return new ComprasService().AltaCompra(compra);
         }
 
-        // 
-        // GET: /Compras/GetCompras/{id}
+        /// <summary>
+        /// Obtiene el listado de las compras totales o de un usuario
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>    
+        [HttpGet]
+        [Route("Compras/GetCompras/")]
         public List<CompraResponse> GetCompras (int id = 0)
         {
             return new ComprasService().GetCompras(id);

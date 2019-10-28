@@ -10,25 +10,37 @@ namespace AmericaVirtualChallenge.Controllers
 {
     public class UsuarioController : Controller
     {
-        // 
-        // POST: /Usuario/Registro/
+        /// <summary>
+        /// Registro de usuario
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         [HttpPost]
+        [Route("Usuario/Registro/")]
         public UsuarioResponse Registro([FromBody] Usuarios usuario)
         {
             return new Services.UsuarioService().Registro(usuario);
         }
 
-        // 
-        // POST: /Usuario/Login/
+        /// <summary>
+        /// Login de usuario
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         [HttpPost]
+        [Route("Usuario/Login/")]
         public UsuarioResponse Login([FromBody] Usuarios usuario)
         {
             return new Services.UsuarioService().Login(usuario);
         }
 
-        // 
-        // POST: /Usuario/Logout/
+        /// <summary>
+        /// Logout de usuario
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         [HttpPost]
+        [Route("Usuario/Logout/")]
         public UsuarioResponse Logout([FromBody] Usuarios usuario)
         {
             return new Services.UsuarioService().Logout(usuario);

@@ -41,15 +41,15 @@ namespace AmericaVirtualChallenge.Models
 
                 entity.Property(e => e.IdUsuario).HasColumnName("idUsuario").IsRequired();
 
-                entity.HasOne(d => d.IdProductoNavigation)
-                    .WithMany(p => p.Compras)
-                    .HasForeignKey(d => d.IdProducto)
-                    .HasConstraintName("FK__compras__idProdu__534D60F1");
+                //entity.HasOne(d => d.IdProductoNavigation)
+                //    entity.WithMany(p => p.Compras)
+                //    .HasForeignKey(d => d.IdProducto)
+                //    .HasConstraintName("FK__compras__idProdu__534D60F1");
 
-                entity.HasOne(d => d.IdUsuarioNavigation)
-                    .WithMany(p => p.Compras)
-                    .HasForeignKey(d => d.IdUsuario)
-                    .HasConstraintName("FK__compras__idUsuar__52593CB8");
+                //entity.HasOne(d => d.IdUsuarioNavigation)
+                //    .WithMany(p => p.Compras)
+                //    .HasForeignKey(d => d.IdUsuario)
+                //    .HasConstraintName("FK__compras__idUsuar__52593CB8");
             });
 
             modelBuilder.Entity<Logger>(entity =>

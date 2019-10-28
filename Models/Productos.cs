@@ -7,7 +7,7 @@ namespace AmericaVirtualChallenge.Models
     {
         public Productos()
         {
-            Compras = new HashSet<Compras>();
+
         }
 
         public int Id { get; set; }
@@ -15,6 +15,5 @@ namespace AmericaVirtualChallenge.Models
         public decimal Precio { get; set; }
         public string Imagen { get; set; }
 
-        public virtual ICollection<Compras> Compras { get; set; }
     }
 }
