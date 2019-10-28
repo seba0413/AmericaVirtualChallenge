@@ -1,6 +1,6 @@
 # AmericaVirtualChallenge
 
-Para desplegar la aplicación, clonar el proyecto y correrlo. 
+Para desplegar la aplicación, clonar el proyecto y correrlo. El proyecto esta en el framework .NET Core 3.0
 
 Correr el script adjunto en el mail en SQL Server. 
 
