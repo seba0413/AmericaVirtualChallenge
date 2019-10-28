@@ -16,6 +16,7 @@ namespace AmericaVirtualChallenge.Models
         }
 
         public virtual DbSet<Compras> Compras { get; set; }
+        public virtual DbSet<Logger> Logger { get; set; }
         public virtual DbSet<Productos> Productos { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
 
@@ -36,9 +37,9 @@ namespace AmericaVirtualChallenge.Models
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.IdProducto).HasColumnName("idProducto");
+                entity.Property(e => e.IdProducto).HasColumnName("idProducto").IsRequired();
 
-                entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
+                entity.Property(e => e.IdUsuario).HasColumnName("idUsuario").IsRequired();
 
                 entity.HasOne(d => d.IdProductoNavigation)
                     .WithMany(p => p.Compras)
@@ -49,6 +50,25 @@ namespace AmericaVirtualChallenge.Models
                     .WithMany(p => p.Compras)
                     .HasForeignKey(d => d.IdUsuario)
                     .HasConstraintName("FK__compras__idUsuar__52593CB8");
+            });
+
+            modelBuilder.Entity<Logger>(entity =>
+            {
+                entity.ToTable("logger");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Accion)
+                    .IsRequired()
+                    .HasColumnName("accion")
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Fecha)
+                    .HasColumnName("fecha")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
             });
 
             modelBuilder.Entity<Productos>(entity =>

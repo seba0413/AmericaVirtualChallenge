@@ -18,5 +18,10 @@ namespace AmericaVirtualChallenge.Services
         {
             return new Data.UsuarioData().Login(usuario);
         }
+
+        public UsuarioResponse Logout(Usuarios usuario)
+        {
+            return new Data.UsuarioData().Logout(usuario);
+        }
     }
 }

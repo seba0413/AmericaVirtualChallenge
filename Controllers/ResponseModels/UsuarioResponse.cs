@@ -12,7 +12,7 @@ namespace AmericaVirtualChallenge.Controllers.ResponseModels
         public string Apellido { get; set; }
         public string Usuario { get; set; }
         public string Clave { get; set; }
-        public bool Logueado { get; set; }
+        public bool? Logueado { get; set; }
         public string Mensaje { get; set; }
 
 

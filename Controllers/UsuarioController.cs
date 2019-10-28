@@ -25,5 +25,13 @@ namespace AmericaVirtualChallenge.Controllers
         {
             return new Services.UsuarioService().Login(usuario);
         }
+
+        // 
+        // POST: /Usuario/Logout/
+        [HttpPost]
+        public UsuarioResponse Logout([FromBody] Usuarios usuario)
+        {
+            return new Services.UsuarioService().Logout(usuario);
+        }
     }
 }
